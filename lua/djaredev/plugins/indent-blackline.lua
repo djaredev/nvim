@@ -16,5 +16,6 @@ return { "lukas-reineke/indent-blankline.nvim",
               "lazyterm",
             },
         },
+        scope = { enabled = false },
     },
 }

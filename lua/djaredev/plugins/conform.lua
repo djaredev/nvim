@@ -5,7 +5,12 @@ return {
         require("conform").setup({
             formatters_by_ft = {
               -- lua = { "stylua" },
-              python = { "black" },
+              python = {
+                 -- To fix lint errors.
+                "ruff_fix",
+                -- To run the Ruff formatter.
+                "ruff_format",
+              },
             },
             format_on_save = {
                 -- These options will be passed to conform.format()

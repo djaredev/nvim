@@ -16,12 +16,12 @@ wk.register({g = { name = "Git Files" }, }, {prefix = "<leader>"})
 
 -- Trouble
 vim.keymap.set("n", "<leader>tx", function() require("trouble").toggle() end, {desc = "Open Trouble"})
-vim.keymap.set("n", "<leader>tw", function() require("trouble").toggle("workspace_diagnostics") end, {desc = "Workspace diagnostics"})
-vim.keymap.set("n", "<leader>td", function() require("trouble").toggle("document_diagnostics") end, {desc = "Document diagnostics"})
-vim.keymap.set("n", "<leader>tq", function() require("trouble").toggle("quickfix") end, {desc = "Quickfix"})
-vim.keymap.set("n", "<leader>tl", function() require("trouble").toggle("loclist") end, {desc = "Loclist"})
+vim.keymap.set("n", "<leader>tw", function() require("trouble").toggle("diagnostics") end, {desc = "Workspace diagnostics"})
+vim.keymap.set("n", "<leader>td", function() require("trouble").toggle("diagnostics") end, {desc = "Document diagnostics"})
+vim.keymap.set("n", "<leader>tq", function() require("trouble").toggle("qflist") end, {desc = "Quickfix"})
+vim.keymap.set("n", "<leader>tl", function() require("trouble").toggle("loclist") end, {desc = "Location list"})
 vim.keymap.set("n", "<leader>tc", function() require("trouble").close() end, {desc = "Close Trouble"})
-vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end, {desc = "Lsp references"})
+vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp") end, {desc = "Lsp references"})
 wk.register({t = { name = "Trouble" }, }, {prefix = "<leader>"})
 
 -- Debug

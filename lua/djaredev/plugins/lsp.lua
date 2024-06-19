@@ -9,7 +9,18 @@ return {
       -- end
         local lspconfig = require "lspconfig"
         -- lspconfig.pylsp.setup{}
+        -- local on_attach = function(client, bufnr)
+        --   if client.name == 'ruff' then
+        --     -- Disable hover in favor of Pyright
+        --     client.server_capabilities.hoverProvider = false
+        --   end
+        -- end
+        -- lspconfig.ruff.setup{
+        --   -- on_attach = on_attach,
+        -- }
+
         lspconfig.pyright.setup{}
+
         lspconfig.rust_analyzer.setup{}
 
 
