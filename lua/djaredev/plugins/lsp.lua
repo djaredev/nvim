@@ -8,19 +8,18 @@ return {
       --   vim.keymap.set('n', 'K', vim.lsp.buf.hover, {buffer = bufnr})
       -- end
         local lspconfig = require "lspconfig"
-        -- lspconfig.pylsp.setup{}
-        -- local on_attach = function(client, bufnr)
-        --   if client.name == 'ruff' then
-        --     -- Disable hover in favor of Pyright
-        --     client.server_capabilities.hoverProvider = false
-        --   end
-        -- end
-        -- lspconfig.ruff.setup{
-        --   -- on_attach = on_attach,
-        -- }
 
-        lspconfig.pyright.setup{}
-
+        lspconfig.pyright.setup{
+          settings = {
+            python = {
+                analysis = {
+                    diagnosticSeverityOverrides = {
+                        reportUnusedImport = "none",
+                    },
+                },
+            },
+          },
+        }
         lspconfig.rust_analyzer.setup{}
 
 
