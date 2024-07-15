@@ -6,7 +6,7 @@ return {
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-cmdline",
         "hrsh7th/cmp-git",
-        --"L3MON4D3/LuaSnip",
+        "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
         'windwp/nvim-autopairs',
     },
@@ -18,7 +18,7 @@ return {
         -- Autopairs in cmp
         local cmp_autopairs = require('nvim-autopairs.completion.cmp')
         cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done { map_char = { tex = "" } })
-        
+        vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
         cmp.setup({
             snippet = {
                 -- REQUIRED - you must specify a snippet engine
@@ -37,7 +37,12 @@ return {
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' }, -- For luasnip users.
                 { name = "path" },
-              }, {{ name = 'buffer' },})
+              }, {{ name = 'buffer' },}),
+            experimental = {
+                ghost_text = {
+                    hl_group = "CmpGhostText",
+                },
+              },
         })
 
 
@@ -71,6 +76,50 @@ return {
                 completion = cmp.config.window.bordered(),
                 documentation = cmp.config.window.bordered(),
             }
+        })
+
+        
+        -- #### Super-Tab like mapping for luasnip ####
+
+        local luasnip = require("luasnip")
+
+        cmp.setup({
+        mapping = {
+        ['<CR>'] = cmp.mapping(function(fallback)
+                if cmp.visible() then
+                    if luasnip.expandable() then
+                        luasnip.expand()
+                    else
+                        cmp.confirm({
+                            select = true,
+                        })
+                    end
+                else
+                    fallback()
+                end
+            end),
+
+            ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            elseif luasnip.locally_jumpable(1) then
+                luasnip.jump(1)
+            else
+                fallback()
+            end
+            end, { "i", "s" }),
+
+            ["<S-Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
+            elseif luasnip.locally_jumpable(-1) then
+                luasnip.jump(-1)
+            else
+                fallback()
+            end
+            end, { "i", "s" }),
+
+        },
         })
 
     end
