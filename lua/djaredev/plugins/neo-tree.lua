@@ -7,6 +7,9 @@ return {
       "MunifTanjim/nui.nvim",
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     },
+    keys = {
+        { "\\", "<cmd>Neotree toggle<cr>", desc = "NeoTree" },
+    },
     config = function()
               -- If you want icons for diagnostic errors, you'll need to define them somewhere:
         vim.fn.sign_define("DiagnosticSignError",
@@ -19,7 +22,7 @@ return {
             {text = "󰌵", texthl = "DiagnosticSignHint"})
 
         require("neo-tree").setup({
-            close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
+            close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
             popup_border_style = "rounded",
             enable_git_status = true,
             enable_diagnostics = true,
@@ -287,7 +290,7 @@ return {
         }
       })
 
-      vim.cmd([[nnoremap \ :Neotree toggle<cr>]])
+    --   vim.cmd([[nnoremap \ :Neotree toggle<cr>]])
 
     end
 }
