@@ -36,6 +36,7 @@
   "nvim-treesitter": { "branch": "master", "commit": "2e9c346aefda680bd14ebf40a50c2897fd637bc2" },
   "nvim-treesitter-context": { "branch": "master", "commit": "2aba92ceb1479485953007f4d5adf34d0b66917e" },
   "nvim-web-devicons": { "branch": "master", "commit": "c0cfc1738361b5da1cd0a962dd6f774cc444f856" },
+  "oil.nvim": { "branch": "master", "commit": "9e5eb2fcd1dfee2ff30c89273ffff179e42034b9" },
   "persistence.nvim": { "branch": "main", "commit": "95d03ad5450389ad7dc2a0fab14ebb3d46bc2c96" },
   "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "a7ab9a957b17199183388c6f357d614fcaa508e5" },

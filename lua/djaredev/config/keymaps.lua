@@ -52,4 +52,7 @@ vim.keymap.set("n", "<leader>xp", ":TermExec cmd='python %'<CR>", {desc = "Execu
 vim.keymap.set("n", "<leader>xf", function() require("conform").format({ timeout_ms = 500, lsp_fallback = true}) end, {desc = "Format code", silent = true})
 wk.register({x = { name = "Code options" }, }, {prefix = "<leader>"})
 
+-- Oil 
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
 
