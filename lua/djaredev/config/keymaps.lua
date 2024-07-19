@@ -44,14 +44,6 @@ vim.keymap.set("n", "<leader>dx", function() require('dap').terminate() end, {de
 wk.register({d = { name = "Debug" }, }, {prefix = "<leader>"})
 
 
-
--- ver keymaps de bufferline
-vim.keymap.set("n", "<leader>1", ":BufferLineGoToBuffer 1<CR>", {desc = "Buffer 1", silent = true})
-vim.keymap.set("n", "<leader>2", ":BufferLineGoToBuffer 2<CR>", {desc = "Buffer 2", silent = true})
-vim.keymap.set("n", "<leader>3", ":BufferLineGoToBuffer 3<CR>", {desc = "Buffer 3", silent = true})
-vim.keymap.set("n", "<leader>4", ":BufferLineGoToBuffer 4<CR>", {desc = "Buffer 4", silent = true})
-vim.keymap.set("n", "<leader>5", ":BufferLineGoToBuffer 5<CR>", {desc = "Buffer 5", silent = true})
-
 -- Safe file
 vim.keymap.set("n", "<C-s>", ":w <CR>", {desc = "Save file", silent = true})
 
