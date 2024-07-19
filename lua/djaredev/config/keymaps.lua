@@ -1,5 +1,14 @@
 local wk = require("which-key")
 
+-- Move Lines
+
+vim.keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
+vim.keymap.set("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
+vim.keymap.set("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
+vim.keymap.set("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
+vim.keymap.set("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move Down",  silent=true}) -- slient = true : mapped command will not be shown on the command line
+vim.keymap.set("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up",  silent=true})
+
 -- Telescope 
 vim.keymap.set("n", "<leader>fg", function() require('telescope.builtin').git_files({ show_untracked = true }) end, {desc = "Telescope Git Files"})
 vim.keymap.set("n", "<leader>fb", function() require("telescope.builtin").buffers() end, {desc = "Telescope buffers"})
