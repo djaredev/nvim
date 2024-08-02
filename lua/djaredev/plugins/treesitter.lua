@@ -16,9 +16,11 @@ return {
                 "bash",
                 "cpp",
                 "c",
+                "java",
                 "csv",
                 "vim",
                 "yaml",
+                "toml"
             },
         },
     },
