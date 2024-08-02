@@ -2,8 +2,15 @@ return {
     {
         "folke/tokyonight.nvim",
         lazy = false,
-        opts = { style = "storm" },
+        -- opts = { style = "storm", transparent = true},
         config = function()
+            require("tokyonight").setup({
+                transparent = true,
+                styles = {
+                    sidebars = "transparent",
+                    floats = "transparent",
+                },
+            })
             vim.cmd[[colorscheme tokyonight-storm]]
         end
     },
