@@ -67,7 +67,6 @@ vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<CMD>w<CR>", {desc = "Save file
 
 -- Code run
 wk.add({"<leader>x", group = "Code options"})
-vim.keymap.set("n", "<leader>xp", ":TermExec cmd='python %'<CR>", {desc = "Execute Python file", silent = true})
 vim.keymap.set("n", "<leader>xf", function() require("conform").format({ timeout_ms = 500, lsp_fallback = true}) end, {desc = "Format code", silent = true})
 
 -- Oil 
