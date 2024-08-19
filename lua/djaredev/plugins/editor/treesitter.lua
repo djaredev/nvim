@@ -20,7 +20,8 @@ return {
                 "csv",
                 "vim",
                 "yaml",
-                "toml"
+                "toml",
+				"kdl",
             },
         },
     },
