@@ -5,11 +5,11 @@ return {
         -- opts = { style = "storm", transparent = true},
         config = function()
             require("tokyonight").setup({
-                transparent = true,
-                styles = {
-                    sidebars = "transparent",
-                    floats = "transparent",
-                },
+                -- transparent = false,
+                -- styles = {
+                --     sidebars = "transparent",
+                --     floats = "transparent",
+                -- },
             })
             vim.cmd[[colorscheme tokyonight-storm]]
         end
