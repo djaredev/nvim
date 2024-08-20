@@ -1,6 +1,14 @@
 return {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
+    keys = {
+        { "<leader>H" }, 
+        { "<leader>h" }, 
+        { "<leader>1" }, 
+        { "<leader>2" },
+        { "<leader>3" },
+        { "<leader>4" }
+    },
     config = function()
         local harpoon = require("harpoon")
         -- REQUIRED
@@ -12,8 +20,8 @@ return {
         vim.keymap.set("n", "<leader>2", function() harpoon:list():select(2) end, {desc = "Harpoon to buffer 2"})
         vim.keymap.set("n", "<leader>3", function() harpoon:list():select(3) end, {desc = "Harpoon to buffer 3"})
         vim.keymap.set("n", "<leader>4", function() harpoon:list():select(4) end, {desc = "Harpoon to buffer 4"})
+        
         require("which-key").add({"<leader>r", group = "Replace at Harpoon"})
-        -- wk.add({"<leader>f", group = "Find/Search"})
         vim.keymap.set("n", "<leader>r1", function() harpoon:list():replace_at(1) end, {desc = "Replace at Harpoon 1"})
         vim.keymap.set("n", "<leader>r2", function() harpoon:list():replace_at(2) end, {desc = "Replace at Harpoon 2"})
         vim.keymap.set("n", "<leader>r3", function() harpoon:list():replace_at(3) end, {desc = "Replace at Harpoon 3"})
