@@ -34,6 +34,13 @@ return {
         defaults = {
           -- `hidden = true` is not supported in text grep commands.
           vimgrep_arguments = vimgrep_arguments,
+          
+          -- view of path: Filename path/reverse/
+          path_display = {
+            filename_first = {
+              reverse_directories = true,
+            }
+          },
         },
         pickers = {
           find_files = {
