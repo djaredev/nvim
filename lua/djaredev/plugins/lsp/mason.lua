@@ -1,5 +1,5 @@
 return {
     "williamboman/mason.nvim",
-    cmd = "Mason",
+	-- cmd = "Mason",
     config = true,
 }
