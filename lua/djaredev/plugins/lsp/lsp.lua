@@ -18,7 +18,7 @@ return {
         }
         lspconfig.rust_analyzer.setup{}
 
-        lspconfig.tsserver.setup{}
+        lspconfig.ts_ls.setup{}
 
 		lspconfig.html.setup{
 			capabilities = capabilities
