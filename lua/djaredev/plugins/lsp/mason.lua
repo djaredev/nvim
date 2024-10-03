@@ -13,6 +13,7 @@ return {
 				"ts_ls", 
 				"jdtls", 
 				"html",
+				"cssls",
 			}
 		})
 	end,
