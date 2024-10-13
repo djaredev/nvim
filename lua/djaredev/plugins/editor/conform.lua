@@ -1,6 +1,6 @@
 return {
     'stevearc/conform.nvim',
-    ft = { "python" },
+    ft = { "python", "javascript", "html", "css" },
     -- event = { "BufReadPre", "BufNewFile" },
     config = function()
         require("conform").setup({
