@@ -1,7 +1,7 @@
 return {
     {
         "folke/tokyonight.nvim",
-        lazy = false,
+        lazy = true,
         -- opts = { style = "storm", transparent = true},
         config = function()
             require("tokyonight").setup({
@@ -73,7 +73,16 @@ return {
                 },
             },
         }
-    }
+    },
+
+	{ 
+		"ellisonleao/gruvbox.nvim", 
+		priority = 1000 , 
+		config = function()
+			vim.o.background = "dark"
+			vim.cmd([[colorscheme gruvbox]])
+		end, 
+	}
 }
 
 
