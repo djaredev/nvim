@@ -73,4 +73,5 @@ vim.keymap.set("n", "<leader>xf", function() require("conform").format({ timeout
 -- Oil 
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
-
+-- UndoTree
+vim.keymap.set("n", "<leader>u", "<CMD>UndotreeToggle<CR>", { desc = "UndoTree" })
