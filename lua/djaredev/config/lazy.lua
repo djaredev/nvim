@@ -13,13 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     spec = {
-		{import = "djaredev.plugins.editor"},
-		{import = "djaredev.plugins.lang"},
-		{import = "djaredev.plugins.lsp"},
-		{import = "djaredev.plugins.ui"},
-		{import = "djaredev.plugins.util"},
-
-
-
+		{import = "djaredev.plugins"},
     }
 })
