@@ -23,6 +23,9 @@ vim.keymap.set("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to Other Buffe
 -- vim.keymap.set("n", "<leader>bd", LazyVim.ui.bufremove, { desc = "Delete Buffer" })
 vim.keymap.set("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Window" })
 
+-- Clear search with <esc>
+vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
+
 -- Telescope 
 wk.add({"<leader>f", group = "Find/Search"})
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", {desc = "Show open buffers"})
