@@ -37,6 +37,11 @@ return {
 				{ name = 'nvim_lsp' },
 				{ name = 'luasnip' }, -- For luasnip users.
 				{ name = "path" },
+				{
+					name = 'lazydev',
+					-- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
+					group_index = 0,
+				},
 			}, { { name = 'buffer' }, }),
 			experimental = {
 				ghost_text = {
