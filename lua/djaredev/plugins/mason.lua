@@ -14,6 +14,7 @@ return {
 				"jdtls", 
 				"html",
 				"cssls",
+				"lua_ls",
 			}
 		})
 	end,
