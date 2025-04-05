@@ -1,6 +1,7 @@
 return {
 	"ThePrimeagen/harpoon",
 	branch = "harpoon2",
+	dependencies = { "nvim-lua/plenary.nvim" },
 	keys = {
 		{ "<leader>H" },
 		{ "<leader>h" },
@@ -29,4 +30,3 @@ return {
 		vim.keymap.set("n", "<leader>r4", function() harpoon:list():replace_at(4) end, { desc = "Replace at Harpoon 4" })
 	end
 }
-
