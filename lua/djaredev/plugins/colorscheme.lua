@@ -18,12 +18,22 @@ return {
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
-		lazy = true,
+		lazy = false,
 		priority = 1000,
 		opts = {
 
 		},
 		config = function()
+			require("catppuccin").setup {
+				color_overrides = {
+					mocha = {
+						base = "#000000",
+						mantle = "#000000",
+						crust = "#000000",
+					}
+				}
+			}
+
 			-- load the colorscheme here
 			vim.cmd([[colorscheme catppuccin-mocha]])
 
@@ -74,13 +84,4 @@ return {
 			},
 		}
 	},
-
-	{
-		"ellisonleao/gruvbox.nvim",
-		priority = 1000,
-		config = function()
-			vim.o.background = "dark"
-			vim.cmd([[colorscheme gruvbox]])
-		end,
-	}
 }
