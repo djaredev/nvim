@@ -2,7 +2,7 @@ return {
 	"neovim/nvim-lspconfig",
 	config = function()
 		local lspconfig = require "lspconfig"
-		local capabilities = require('cmp_nvim_lsp').default_capabilities()
+		local capabilities = require('blink.cmp').get_lsp_capabilities()
 
 		lspconfig.pyright.setup {
 			capabilities = capabilities,
@@ -80,5 +80,23 @@ return {
 				end, opts)
 			end,
 		})
+		vim.diagnostic.config {
+			severity_sort = true,
+			float = { border = 'rounded', source = 'if_many' },
+			underline = { severity = vim.diagnostic.severity.ERROR },
+			signs = {
+				text = {
+					[vim.diagnostic.severity.ERROR] = ' ',
+					[vim.diagnostic.severity.WARN] = ' ',
+					[vim.diagnostic.severity.INFO] = ' ',
+					[vim.diagnostic.severity.HINT] = '󰌵 ',
+				},
+			} or {},
+			virtual_text = {
+				source = 'if_many',
+				spacing = 2,
+				prefix = '󰁨 ',
+			},
+		}
 	end
 }
