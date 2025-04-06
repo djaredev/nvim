@@ -26,26 +26,6 @@ vim.keymap.set("n", "<leader>bD", "<cmd>:bd<cr>", { desc = "Delete Buffer and Wi
 -- Clear search with <esc>
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and Clear hlsearch" })
 
--- Telescope
-wk.add({ "<leader>f", group = "Find/Search" })
-vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Show open buffers" })
-vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
-vim.keymap.set("n", "<leader>fc", "<cmd>Telescope find_files cwd=~/.config/nvim<cr>", { desc = "Find config files" })
-vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Help tags" })
-vim.keymap.set("n", "<leader>fs", "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>",
-	{ desc = "File browser" })
-vim.keymap.set("n", "<leader>fl", "<cmd>Telescope live_grep<cr>", { desc = "Grep on current working directory" })
-vim.keymap.set("n", "<leader>fg", "<cmd>Telescope grep_string<cr>", { desc = "Grep under cursor" })
-vim.keymap.set("n", "<leader>ft", "<cmd>Telescope colorscheme<cr>", { desc = "Lists available colorschemes" })
-
-
-
-wk.add({ "<leader>g", group = "Git" })
-vim.keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>", { desc = "Git status" })
-vim.keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", { desc = "Git commits" })
-vim.keymap.set("n", "<leader>gb", "<cmd>Telescope git_braches<cr>", { desc = "Git branches" })
-
-
 -- Trouble
 wk.add({ "<leader>t", group = "Trouble" })
 vim.keymap.set("n", "<leader>tx", function() require("trouble").toggle() end, { desc = "Open Trouble" })
