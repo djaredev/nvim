@@ -61,7 +61,7 @@ return {
 				draw = {
 					columns = {
 						{ "label",     "label_description", gap = 1 },
-						{ "kind_icon", gap = 1,             "kind" }
+						{ "kind_icon", "kind" }
 					},
 					treesitter = { 'lsp' },
 				}
@@ -78,7 +78,15 @@ return {
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
-			default = { 'lsp', 'path', 'snippets', 'buffer' },
+			default = { 'lsp', 'path', 'snippets', 'buffer', 'lazydev' },
+			providers = {
+				lazydev = {
+					name = "LazyDev",
+					module = "lazydev.integrations.blink",
+					-- make lazydev completions top priority (see `:h blink.cmp`)
+					score_offset = 100,
+				},
+			},
 		},
 
 		-- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
