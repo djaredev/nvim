@@ -16,9 +16,13 @@ return {
 				},
 			},
 		}
-		lspconfig.rust_analyzer.setup {}
+		lspconfig.rust_analyzer.setup {
+			capabilities = capabilities
+		}
 
-		lspconfig.ts_ls.setup {}
+		lspconfig.ts_ls.setup {
+			capabilities = capabilities
+		}
 
 		lspconfig.html.setup {
 			capabilities = capabilities
@@ -27,7 +31,9 @@ return {
 			capabilities = capabilities,
 		}
 
-		lspconfig.lua_ls.setup {}
+		lspconfig.lua_ls.setup {
+			capabilities = capabilities
+		}
 
 
 		-- Global mappings.
