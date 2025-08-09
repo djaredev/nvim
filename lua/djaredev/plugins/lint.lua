@@ -1,10 +1,15 @@
 return {
 	"mfussenegger/nvim-lint",
-	ft = { "python" },
+	ft = { "python", "javascript", "typescript", "html", "css", "svelte" },
 	-- event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		require("lint").linters_by_ft = {
 			python = { "ruff" },
+			javascript = { "eslint" },
+			typescript = { "eslint" },
+			html = { "eslint" },
+			css = { "eslint" },
+			svelte = { "eslint" },
 		}
 
 		vim.api.nvim_create_autocmd({ "BufWritePost" }, {
@@ -16,4 +21,3 @@ return {
 		})
 	end
 }
-

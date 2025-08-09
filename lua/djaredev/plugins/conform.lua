@@ -1,6 +1,6 @@
 return {
 	'stevearc/conform.nvim',
-	ft = { "python", "javascript", "html", "css", "lua" },
+	ft = { "python", "javascript", "html", "css", "lua", "typescript", "svelte" },
 	-- event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		require("conform").setup({
@@ -12,6 +12,11 @@ return {
 					-- To run the Ruff formatter.
 					"ruff_format",
 				},
+				javascript = { "prettier" },
+				typescript = { "prettier" },
+				html = { "prettier" },
+				css = { "prettier" },
+				svelte = { "prettier" },
 			},
 			format_on_save = {
 				-- These options will be passed to conform.format()

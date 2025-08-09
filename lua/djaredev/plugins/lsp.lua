@@ -35,6 +35,10 @@ return {
 			capabilities = capabilities
 		}
 
+		lspconfig.svelte.setup {
+			capabilities = capabilities
+		}
+
 
 		-- Global mappings.
 		-- See `:help vim.diagnostic.*` for documentation on any of the below functions
