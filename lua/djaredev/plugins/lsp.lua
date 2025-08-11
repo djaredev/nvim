@@ -1,43 +1,13 @@
 return {
 	"neovim/nvim-lspconfig",
 	config = function()
-		local lspconfig = require "lspconfig"
-		local capabilities = require('blink.cmp').get_lsp_capabilities()
-
-		lspconfig.pyright.setup {
-			capabilities = capabilities,
-			settings = {
-				python = {
-					analysis = {
-						diagnosticSeverityOverrides = {
-							reportUnusedImport = "none",
-						},
-					},
-				},
-			},
-		}
-		lspconfig.rust_analyzer.setup {
-			capabilities = capabilities
-		}
-
-		lspconfig.ts_ls.setup {
-			capabilities = capabilities
-		}
-
-		lspconfig.html.setup {
-			capabilities = capabilities
-		}
-		lspconfig.cssls.setup {
-			capabilities = capabilities,
-		}
-
-		lspconfig.lua_ls.setup {
-			capabilities = capabilities
-		}
-
-		lspconfig.svelte.setup {
-			capabilities = capabilities
-		}
+		vim.lsp.enable("pyright")
+		vim.lsp.enable("rust_analyzer")
+		vim.lsp.enable("ts_ls")
+		vim.lsp.enable("html")
+		vim.lsp.enable("cssls")
+		vim.lsp.enable("lua_ls")
+		vim.lsp.enable("svelte")
 
 
 		-- Global mappings.
@@ -90,6 +60,7 @@ return {
 				end, opts)
 			end,
 		})
+
 		vim.diagnostic.config {
 			severity_sort = true,
 			float = { border = 'rounded', source = 'if_many' },
