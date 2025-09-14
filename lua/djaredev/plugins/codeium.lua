@@ -1,4 +1,5 @@
 return {
 	'Exafunction/codeium.vim',
-	event = 'BufEnter'
+	lazy = true,
+	-- event = 'BufEnter',
 }
