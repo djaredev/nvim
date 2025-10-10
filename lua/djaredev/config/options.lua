@@ -4,6 +4,7 @@ vim.opt.tabstop        = 4
 vim.opt.shiftwidth     = 4
 vim.opt.expandtab      = true
 vim.g.mapleader        = " "
+vim.g.clipboard = "osc52" -- force OSC52
 vim.opt.termguicolors  = true -- 24-bit colour
 vim.opt.clipboard      = 'unnamedplus'
 -- vim.opt.hlsearch             = false
