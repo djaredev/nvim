@@ -1,7 +1,7 @@
 return {
 	"mfussenegger/nvim-lint",
 	ft = { "python", "javascript", "typescript", "html", "css", "svelte" },
-	-- event = { "BufReadPre", "BufNewFile" },
+	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		require("lint").linters_by_ft = {
 			python = { "ruff" },
